@@ -7,5 +7,11 @@ export default function showWinnerModal(fighter) {
     fighterImage.src = fighter.source;
     bodyElement.appendChild(fighterImage);
 
-    showModal({ title, bodyElement });
+    showModal({
+        title,
+        bodyElement,
+        onClose: () => {
+            document.location.reload();
+        }
+    });
 }
